@@ -26,7 +26,7 @@ export class Feature {
   @Column({ type: "int",  name: "category_id", unsigned: true})
   categoryId: number;
 
-  @OneToMany(() => ArticleFeature, (articleFeature) => articleFeature.feature)
+  @OneToMany(() => ArticleFeature, articleFeature => articleFeature.feature)
   articleFeatures: ArticleFeature[];
 
   @ManyToMany(type => Article, article => article.features)
