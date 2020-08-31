@@ -4,11 +4,9 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-DROP DATABASE IF EXISTS `aplikacija`;
 CREATE DATABASE IF NOT EXISTS `aplikacija` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `aplikacija`;
 
-DROP TABLE IF EXISTS `administrator`;
 CREATE TABLE IF NOT EXISTS `administrator` (
   `administrator_id` int unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(32) NOT NULL DEFAULT '0',
@@ -28,7 +26,6 @@ INSERT INTO `administrator` (`administrator_id`, `username`, `password_hash`) VA
 	(8, 'test2', '6D201BEEEFB589B08EF0672DAC82353D0CBD9AD99E1642C83A1601F3D647BCCA003257B5E8F31BDC1D73FBEC84FB085C79D6E2677B7FF927E823A54E789140D9');
 /*!40000 ALTER TABLE `administrator` ENABLE KEYS */;
 
-DROP TABLE IF EXISTS `article`;
 CREATE TABLE IF NOT EXISTS `article` (
   `article_id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL DEFAULT '0',
@@ -51,7 +48,6 @@ INSERT INTO `article` (`article_id`, `name`, `category_id`, `excerpt`, `descript
 	(3, 'Prozor', 5, 'kratak', 'duzi', 'available', 0, '2020-08-28 21:10:56');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
-DROP TABLE IF EXISTS `article_feature`;
 CREATE TABLE IF NOT EXISTS `article_feature` (
   `article_feature_id` int unsigned NOT NULL AUTO_INCREMENT,
   `article_id` int unsigned NOT NULL DEFAULT '0',
@@ -73,7 +69,6 @@ INSERT INTO `article_feature` (`article_feature_id`, `article_id`, `feature_id`,
 	(12, 2, 3, 'vrata');
 /*!40000 ALTER TABLE `article_feature` ENABLE KEYS */;
 
-DROP TABLE IF EXISTS `article_price`;
 CREATE TABLE IF NOT EXISTS `article_price` (
   `article_price_id` int unsigned NOT NULL AUTO_INCREMENT,
   `article_id` int unsigned NOT NULL DEFAULT '0',
@@ -94,7 +89,6 @@ INSERT INTO `article_price` (`article_price_id`, `article_id`, `price`, `created
 	(5, 2, 59.12, '2020-08-30 19:44:07');
 /*!40000 ALTER TABLE `article_price` ENABLE KEYS */;
 
-DROP TABLE IF EXISTS `cart`;
 CREATE TABLE IF NOT EXISTS `cart` (
   `cart_id` int unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int unsigned NOT NULL DEFAULT '0',
@@ -106,9 +100,10 @@ CREATE TABLE IF NOT EXISTS `cart` (
 
 DELETE FROM `cart`;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` (`cart_id`, `user_id`, `created_at`) VALUES
+	(1, 1, '2020-08-31 19:48:56');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
-DROP TABLE IF EXISTS `cart_article`;
 CREATE TABLE IF NOT EXISTS `cart_article` (
   `cart_article_id` int unsigned NOT NULL AUTO_INCREMENT,
   `cart_id` int unsigned NOT NULL DEFAULT '0',
@@ -123,9 +118,11 @@ CREATE TABLE IF NOT EXISTS `cart_article` (
 
 DELETE FROM `cart_article`;
 /*!40000 ALTER TABLE `cart_article` DISABLE KEYS */;
+INSERT INTO `cart_article` (`cart_article_id`, `cart_id`, `article_id`, `quantity`) VALUES
+	(1, 1, 1, 7.00),
+	(2, 1, 2, 0.00);
 /*!40000 ALTER TABLE `cart_article` ENABLE KEYS */;
 
-DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL DEFAULT '0',
@@ -148,7 +145,6 @@ INSERT INTO `category` (`category_id`, `name`, `image_path`, `parent_category_id
 	(5, 'Elitna linija', 'assets/prozor/elitni/elipro.jpg', 4);
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
-DROP TABLE IF EXISTS `feature`;
 CREATE TABLE IF NOT EXISTS `feature` (
   `feature_id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL DEFAULT '0',
@@ -170,7 +166,6 @@ INSERT INTO `feature` (`feature_id`, `name`, `category_id`) VALUES
 	(3, 'Vrata', 5);
 /*!40000 ALTER TABLE `feature` ENABLE KEYS */;
 
-DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` int unsigned NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -185,7 +180,6 @@ DELETE FROM `order`;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
-DROP TABLE IF EXISTS `photo`;
 CREATE TABLE IF NOT EXISTS `photo` (
   `photo_id` int unsigned NOT NULL AUTO_INCREMENT,
   `article_id` int unsigned NOT NULL DEFAULT '0',
@@ -203,7 +197,6 @@ INSERT INTO `photo` (`photo_id`, `article_id`, `image_path`) VALUES
 	(5, 2, '2020829-9799697921-pvc-prozor.jpg');
 /*!40000 ALTER TABLE `photo` ENABLE KEYS */;
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL DEFAULT '0',
@@ -220,8 +213,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `email`, `password_hash`, `forename`, `surname`, `phone_number`, `postal_address`) VALUES
-	(1, 'test@test.rs', '3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2', '0', 'Lukic', '+222222222', 'Neka adresa bb, Neki grad, Negde'),
-	(3, 'test2@test.rs', '3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2', '0', 'Lukic2', '+232222222', 'Neka adresa bb 2, Neki grad, Negde');
+	(1, 'test@test.rs', '3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2', 'Luka', 'Lukic', '+222222222', 'Neka adresa bb, Neki grad, Negde'),
+	(3, 'test2@test.rs', '3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2', 'Luka2', 'Lukic2', '+232222222', 'Neka adresa bb 2, Neki grad, Negde');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
