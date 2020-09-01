@@ -878,6 +878,142 @@
 					]
 				},
 				{
+					"name": "Get many articles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/article/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get many articles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/article/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"article",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2977"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ba1-mRdtrX4lXJFeQVpUJTZzasp3DM0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Sep 2020 16:47:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"articleId\": 1,\n        \"name\": \"Prozor\",\n        \"categoryId\": 5,\n        \"excerpt\": \"Kratak opis\",\n        \"description\": \"Detaljan opis\",\n        \"status\": \"available\",\n        \"isPromoted\": 0,\n        \"createdAt\": \"2020-08-28T15:41:14.000Z\",\n        \"category\": {\n            \"categoryId\": 5,\n            \"name\": \"Elitna linija\",\n            \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n            \"parentCategoryId\": 4\n        },\n        \"photos\": [],\n        \"articlePrices\": [\n            {\n                \"articlePriceId\": 1,\n                \"articleId\": 1,\n                \"price\": \"45.00\",\n                \"createdAt\": \"2020-08-28T16:04:42.000Z\"\n            },\n            {\n                \"articlePriceId\": 2,\n                \"articleId\": 1,\n                \"price\": \"43.00\",\n                \"createdAt\": \"2020-08-28T16:05:01.000Z\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 1,\n                \"articleId\": 1,\n                \"featureId\": 1,\n                \"value\": \"jedno krilni\"\n            },\n            {\n                \"articleFeatureId\": 2,\n                \"articleId\": 1,\n                \"featureId\": 2,\n                \"value\": \"dvokrilni\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 1,\n                \"name\": \"Jednoslojni\",\n                \"categoryId\": 3\n            },\n            {\n                \"featureId\": 2,\n                \"name\": \"PVC\",\n                \"categoryId\": 5\n            }\n        ]\n    },\n    {\n        \"articleId\": 2,\n        \"name\": \"Dvoslojni Prozor\",\n        \"categoryId\": 5,\n        \"excerpt\": \"Neki kratak tekst 2\",\n        \"description\": \"neki malo duzi tekst 2\",\n        \"status\": \"visible\",\n        \"isPromoted\": 1,\n        \"createdAt\": \"2020-08-28T19:10:51.000Z\",\n        \"category\": {\n            \"categoryId\": 5,\n            \"name\": \"Elitna linija\",\n            \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n            \"parentCategoryId\": 4\n        },\n        \"photos\": [\n            {\n                \"photoId\": 4,\n                \"articleId\": 2,\n                \"imagePath\": \"2020829-9621021348-pvc-prozor.jpg\"\n            },\n            {\n                \"photoId\": 5,\n                \"articleId\": 2,\n                \"imagePath\": \"2020829-9799697921-pvc-prozor.jpg\"\n            }\n        ],\n        \"articlePrices\": [\n            {\n                \"articlePriceId\": 3,\n                \"articleId\": 2,\n                \"price\": \"56.00\",\n                \"createdAt\": \"2020-08-28T19:10:51.000Z\"\n            },\n            {\n                \"articlePriceId\": 5,\n                \"articleId\": 2,\n                \"price\": \"59.12\",\n                \"createdAt\": \"2020-08-30T17:44:07.000Z\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 11,\n                \"articleId\": 2,\n                \"featureId\": 1,\n                \"value\": \"alu\"\n            },\n            {\n                \"articleFeatureId\": 12,\n                \"articleId\": 2,\n                \"featureId\": 3,\n                \"value\": \"vrata\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 1,\n                \"name\": \"Jednoslojni\",\n                \"categoryId\": 3\n            },\n            {\n                \"featureId\": 3,\n                \"name\": \"Dvoslojni\",\n                \"categoryId\": 5\n            }\n        ]\n    },\n    {\n        \"articleId\": 3,\n        \"name\": \"Prozor\",\n        \"categoryId\": 5,\n        \"excerpt\": \"kratak\",\n        \"description\": \"duzi\",\n        \"status\": \"available\",\n        \"isPromoted\": 0,\n        \"createdAt\": \"2020-08-28T19:10:56.000Z\",\n        \"category\": {\n            \"categoryId\": 5,\n            \"name\": \"Elitna linija\",\n            \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n            \"parentCategoryId\": 4\n        },\n        \"photos\": [],\n        \"articlePrices\": [\n            {\n                \"articlePriceId\": 4,\n                \"articleId\": 3,\n                \"price\": \"56.00\",\n                \"createdAt\": \"2020-08-28T19:10:56.000Z\"\n            }\n        ],\n        \"articleFeatures\": [],\n        \"features\": []\n    },\n    {\n        \"articleId\": 4,\n        \"name\": \"Francuski prozor\",\n        \"categoryId\": 3,\n        \"excerpt\": \"Kratakak op[is\",\n        \"description\": \"Detaljan opis necega\",\n        \"status\": \"available\",\n        \"isPromoted\": 0,\n        \"createdAt\": \"2020-09-01T14:46:35.000Z\",\n        \"category\": {\n            \"categoryId\": 3,\n            \"name\": \"Promo linija\",\n            \"imagePath\": \"assets/prozor/jendokrilini.jpg\",\n            \"parentCategoryId\": 1\n        },\n        \"photos\": [],\n        \"articlePrices\": [\n            {\n                \"articlePriceId\": 6,\n                \"articleId\": 4,\n                \"price\": \"200.00\",\n                \"createdAt\": \"2020-09-01T14:48:18.000Z\"\n            }\n        ],\n        \"articleFeatures\": [\n            {\n                \"articleFeatureId\": 14,\n                \"articleId\": 4,\n                \"featureId\": 8,\n                \"value\": \"Promo\"\n            },\n            {\n                \"articleFeatureId\": 15,\n                \"articleId\": 4,\n                \"featureId\": 1,\n                \"value\": \"16\\\"\"\n            },\n            {\n                \"articleFeatureId\": 16,\n                \"articleId\": 4,\n                \"featureId\": 9,\n                \"value\": \"primer\"\n            }\n        ],\n        \"features\": [\n            {\n                \"featureId\": 1,\n                \"name\": \"Jednoslojni\",\n                \"categoryId\": 3\n            },\n            {\n                \"featureId\": 8,\n                \"name\": \"ALU \",\n                \"categoryId\": 3\n            },\n            {\n                \"featureId\": 9,\n                \"name\": \"primer\",\n                \"categoryId\": 2\n            }\n        ]\n    }\n]"
+						},
+						{
+							"name": "Get a single article - pic location good",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/article/2/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"article",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "520"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"208-a88RxMdw+vof20LVQx/aYDlRst4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Aug 2020 17:23:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"articleId\": 2,\n    \"name\": \"Prozor\",\n    \"categoryId\": 5,\n    \"excerpt\": \"kratak\",\n    \"description\": \"duzi\",\n    \"status\": \"available\",\n    \"isPromoted\": 0,\n    \"createdAt\": \"2020-08-28T19:10:51.000Z\",\n    \"category\": {\n        \"categoryId\": 5,\n        \"name\": \"Elitna linija\",\n        \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n        \"parentCategoryId\": 4\n    },\n    \"photos\": [\n        {\n            \"photoId\": 3,\n            \"articleId\": 2,\n            \"imagePath\": \"2020829-2323450372-elixir-window-500x500.jpg\"\n        }\n    ],\n    \"articlePrices\": [\n        {\n            \"articlePriceId\": 3,\n            \"articleId\": 2,\n            \"price\": \"56.00\",\n            \"createdAt\": \"2020-08-28T19:10:51.000Z\"\n        }\n    ],\n    \"articleFeatures\": [],\n    \"features\": []\n}"
+						}
+					]
+				},
+				{
 					"name": "Delete a single article photo",
 					"request": {
 						"method": "DELETE",
@@ -1139,6 +1275,160 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"articleId\": 2,\n    \"name\": \"Dvoslojni Prozor\",\n    \"categoryId\": 5,\n    \"excerpt\": \"Neki kratak tekst 2\",\n    \"description\": \"neki malo duzi tekst 2\",\n    \"status\": \"visible\",\n    \"isPromoted\": 1,\n    \"createdAt\": \"2020-08-28T19:10:51.000Z\",\n    \"category\": {\n        \"categoryId\": 5,\n        \"name\": \"Elitna linija\",\n        \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n        \"parentCategoryId\": 4\n    },\n    \"articleFeatures\": [\n        {\n            \"articleFeatureId\": 11,\n            \"articleId\": 2,\n            \"featureId\": 1,\n            \"value\": \"alu\"\n        },\n        {\n            \"articleFeatureId\": 12,\n            \"articleId\": 2,\n            \"featureId\": 3,\n            \"value\": \"vrata\"\n        }\n    ],\n    \"features\": [\n        {\n            \"featureId\": 1,\n            \"name\": \"ALU\",\n            \"categoryId\": 5\n        },\n        {\n            \"featureId\": 3,\n            \"name\": \"Vrata\",\n            \"categoryId\": 5\n        }\n    ],\n    \"articlePrices\": [\n        {\n            \"articlePriceId\": 3,\n            \"articleId\": 2,\n            \"price\": \"56.00\",\n            \"createdAt\": \"2020-08-28T19:10:51.000Z\"\n        },\n        {\n            \"articlePriceId\": 5,\n            \"articleId\": 2,\n            \"price\": \"59.12\",\n            \"createdAt\": \"2020-08-30T17:44:07.000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Search articles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\": 3,\r\n    \"keywords\": \"opis\",\r\n    \"priceMin\": 20,\r\n    \"priceMax\": 200,\r\n    \"features\": [{\r\n        \"featureId\": 3,\r\n        \"values\": [ \"vrata\", \"Promo\" ]\r\n         }\r\n    \r\n    ],\r\n    \"orderBy\": \"name\",\r\n    \"orderDirection\": \"ASC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/article/search/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"search",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search articles SQL error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryId\": 3,\r\n    \"keywords\": \"opis\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/article/search/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"article",
+										"search",
+										""
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Sep 2020 16:57:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 500,\n    \"message\": \"Internal server error\"\n}"
+						},
+						{
+							"name": "Search articles - just categoryId",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/article/search/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"article",
+										"search",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c5-TUD4QUjp8YPXnl6Nxjw33WKAEMM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Sep 2020 16:53:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"articleId\": 4,\n        \"name\": \"Francuski prozor\",\n        \"categoryId\": 3,\n        \"excerpt\": \"Kratakak op[is\",\n        \"description\": \"Detaljan opis necega\",\n        \"status\": \"available\",\n        \"isPromoted\": 0,\n        \"createdAt\": \"2020-09-01T14:46:35.000Z\"\n    }\n]"
 						}
 					]
 				}
@@ -1612,7 +1902,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"test2@test.rs\",\r\n    \"password\": \"123\",\r\n    \"forname\": \"Luka2\",\r\n    \"surname\": \"Lukic2\",\r\n    \"phoneNumber\": \"+232222222\",\r\n    \"postalAddress\": \"Neka adresa bb 2, Neki grad, Negde\"\r\n}",
+							"raw": "{\r\n    \"email\": \"test322@test.rs\",\r\n    \"password\": \"123acs\",\r\n    \"forename\": \"Lukans\",\r\n    \"surname\": \"Lukiins\",\r\n    \"phoneNumber\": \"+381113000000\",\r\n    \"postalAddress\": \"Neka adresa bb 23, Neki grad, Negde\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1637,6 +1927,128 @@
 					"response": [
 						{
 							"name": "Register a new user account - works",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test322@test.rs\",\r\n    \"password\": \"123acs\",\r\n    \"forename\": \"Lukans\",\r\n    \"surname\": \"Lukiins\",\r\n    \"phoneNumber\": \"+381113000000\",\r\n    \"postalAddress\": \"Neka adresa bb 23, Neki grad, Negde\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/register/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "308"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"134-rresENCbLmZnIlia4Di1FiXNnFI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Sep 2020 14:31:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"test322@test.rs\",\n    \"passwordHash\": \"071F4B5D4582D1BF221AF1754E1D515A7CB1D47BE66512CFEDB781D9E978DA49BBF21088952C20D3C88AEFF03FD0E5411C2B32D4BE132EE06E0B64C8A7232D4F\",\n    \"forename\": \"Lukans\",\n    \"surname\": \"Lukiins\",\n    \"phoneNumber\": \"+381113000000\",\n    \"postalAddress\": \"Neka adresa bb 23, Neki grad, Negde\",\n    \"userId\": 4\n}"
+						},
+						{
+							"name": "Register a new user account - bad password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test322@test.rs\",\r\n    \"password\": \"123\",\r\n    \"forename\": \"Lukans\",\r\n    \"surname\": \"Lukiins\",\r\n    \"phoneNumber\": \"+381113000000\",\r\n    \"postalAddress\": \"Neka adresa bb 23, Neki grad, Negde\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/register/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6c-Ya2Yfj5/JUqx0b/eFatsSmvRYpY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Sep 2020 14:30:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": [\n        \"password must be longer than or equal to 6 characters\"\n    ],\n    \"error\": \"Bad Request\"\n}"
+						},
+						{
+							"name": "Register a new user account - old version without validator",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -2199,7 +2611,70 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Add article to the current cart",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"articleId\": 2,\r\n    \"quantity\" : 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/cart/addToCart/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"cart",
+										"addToCart",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1141"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"475-TaYQP3AKdC3ZOZpRY8+P6dzYKco\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 31 Aug 2020 18:00:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cartId\": 1,\n    \"userId\": 1,\n    \"createdAt\": \"2020-08-31T17:48:56.000Z\",\n    \"user\": {\n        \"userId\": 1,\n        \"email\": \"test@test.rs\",\n        \"passwordHash\": \"3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2\",\n        \"forename\": \"Luka\",\n        \"surname\": \"Lukic\",\n        \"phoneNumber\": \"+222222222\",\n        \"postalAddress\": \"Neka adresa bb, Neki grad, Negde\"\n    },\n    \"cartArticles\": [\n        {\n            \"cartArticleId\": 1,\n            \"cartId\": 1,\n            \"articleId\": 1,\n            \"quantity\": \"2.00\",\n            \"article\": {\n                \"articleId\": 1,\n                \"name\": \"Prozor\",\n                \"categoryId\": 5,\n                \"excerpt\": \"Kratak opis\",\n                \"description\": \"Detaljan opis\",\n                \"status\": \"available\",\n                \"isPromoted\": 0,\n                \"createdAt\": \"2020-08-28T15:41:14.000Z\",\n                \"category\": {\n                    \"categoryId\": 5,\n                    \"name\": \"Elitna linija\",\n                    \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n                    \"parentCategoryId\": 4\n                }\n            }\n        },\n        {\n            \"cartArticleId\": 2,\n            \"cartId\": 1,\n            \"articleId\": 2,\n            \"quantity\": \"2.00\",\n            \"article\": {\n                \"articleId\": 2,\n                \"name\": \"Dvoslojni Prozor\",\n                \"categoryId\": 5,\n                \"excerpt\": \"Neki kratak tekst 2\",\n                \"description\": \"neki malo duzi tekst 2\",\n                \"status\": \"visible\",\n                \"isPromoted\": 1,\n                \"createdAt\": \"2020-08-28T19:10:51.000Z\",\n                \"category\": {\n                    \"categoryId\": 5,\n                    \"name\": \"Elitna linija\",\n                    \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n                    \"parentCategoryId\": 4\n                }\n            }\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "Change article quantity in the current cart",
@@ -2291,6 +2766,136 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"cartId\": 1,\n    \"userId\": 1,\n    \"createdAt\": \"2020-08-31T17:48:56.000Z\",\n    \"user\": {\n        \"userId\": 1,\n        \"email\": \"test@test.rs\",\n        \"passwordHash\": \"3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2\",\n        \"forename\": \"Luka\",\n        \"surname\": \"Lukic\",\n        \"phoneNumber\": \"+222222222\",\n        \"postalAddress\": \"Neka adresa bb, Neki grad, Negde\"\n    },\n    \"cartArticles\": [\n        {\n            \"cartArticleId\": 1,\n            \"cartId\": 1,\n            \"articleId\": 1,\n            \"quantity\": \"7.00\",\n            \"article\": {\n                \"articleId\": 1,\n                \"name\": \"Prozor\",\n                \"categoryId\": 5,\n                \"excerpt\": \"Kratak opis\",\n                \"description\": \"Detaljan opis\",\n                \"status\": \"available\",\n                \"isPromoted\": 0,\n                \"createdAt\": \"2020-08-28T15:41:14.000Z\",\n                \"category\": {\n                    \"categoryId\": 5,\n                    \"name\": \"Elitna linija\",\n                    \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n                    \"parentCategoryId\": 4\n                }\n            }\n        },\n        {\n            \"cartArticleId\": 2,\n            \"cartId\": 1,\n            \"articleId\": 2,\n            \"quantity\": \"0.00\",\n            \"article\": {\n                \"articleId\": 2,\n                \"name\": \"Dvoslojni Prozor\",\n                \"categoryId\": 5,\n                \"excerpt\": \"Neki kratak tekst 2\",\n                \"description\": \"neki malo duzi tekst 2\",\n                \"status\": \"visible\",\n                \"isPromoted\": 1,\n                \"createdAt\": \"2020-08-28T19:10:51.000Z\",\n                \"category\": {\n                    \"categoryId\": 5,\n                    \"name\": \"Elitna linija\",\n                    \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n                    \"parentCategoryId\": 4\n                }\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Make an order for the current cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/cart/makeOrder/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"cart",
+								"makeOrder",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Make an order for the current cart -empty cart",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/user/cart/makeOrder/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"cart",
+										"makeOrder",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-7IURZqLP0tFQhBVZPX44dA+dxYY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Sep 2020 10:41:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -7003,\n    \"message\": \"This cart is empty\"\n}"
+						},
+						{
+							"name": "Make an order for the current cart - pending",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/user/cart/makeOrder/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"cart",
+										"makeOrder",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1062"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"426-SlEbOkkvBs6oM+nVvRyFyjOvNH8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Sep 2020 10:42:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderId\": 2,\n    \"createdAt\": \"2020-09-01T10:42:06.000Z\",\n    \"cartId\": 2,\n    \"status\": \"pending\",\n    \"cart\": {\n        \"cartId\": 2,\n        \"userId\": 1,\n        \"createdAt\": \"2020-09-01T10:41:26.000Z\",\n        \"user\": {\n            \"userId\": 1,\n            \"email\": \"test@test.rs\",\n            \"passwordHash\": \"3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2\",\n            \"forename\": \"Luka\",\n            \"surname\": \"Lukic\",\n            \"phoneNumber\": \"+222222222\",\n            \"postalAddress\": \"Neka adresa bb, Neki grad, Negde\"\n        },\n        \"cartArticles\": [\n            {\n                \"cartArticleId\": 3,\n                \"cartId\": 2,\n                \"articleId\": 2,\n                \"quantity\": \"2.00\",\n                \"article\": {\n                    \"articleId\": 2,\n                    \"name\": \"Dvoslojni Prozor\",\n                    \"categoryId\": 5,\n                    \"excerpt\": \"Neki kratak tekst 2\",\n                    \"description\": \"neki malo duzi tekst 2\",\n                    \"status\": \"visible\",\n                    \"isPromoted\": 1,\n                    \"createdAt\": \"2020-08-28T19:10:51.000Z\",\n                    \"category\": {\n                        \"categoryId\": 5,\n                        \"name\": \"Elitna linija\",\n                        \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n                        \"parentCategoryId\": 4\n                    },\n                    \"articlePrices\": [\n                        {\n                            \"articlePriceId\": 3,\n                            \"articleId\": 2,\n                            \"price\": \"56.00\",\n                            \"createdAt\": \"2020-08-28T19:10:51.000Z\"\n                        },\n                        {\n                            \"articlePriceId\": 5,\n                            \"articleId\": 2,\n                            \"price\": \"59.12\",\n                            \"createdAt\": \"2020-08-30T17:44:07.000Z\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 						}
 					]
 				}

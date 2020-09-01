@@ -38,14 +38,15 @@ CREATE TABLE IF NOT EXISTS `article` (
   PRIMARY KEY (`article_id`),
   KEY `FK_article_category` (`category_id`),
   CONSTRAINT `FK_article_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DELETE FROM `article`;
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
 INSERT INTO `article` (`article_id`, `name`, `category_id`, `excerpt`, `description`, `status`, `is_promoted`, `created_at`) VALUES
 	(1, 'Prozor', 5, 'Kratak opis', 'Detaljan opis', 'available', 0, '2020-08-28 17:41:14'),
 	(2, 'Dvoslojni Prozor', 5, 'Neki kratak tekst 2', 'neki malo duzi tekst 2', 'visible', 1, '2020-08-28 21:10:51'),
-	(3, 'Prozor', 5, 'kratak', 'duzi', 'available', 0, '2020-08-28 21:10:56');
+	(3, 'Prozor', 5, 'kratak', 'duzi', 'available', 0, '2020-08-28 21:10:56'),
+	(4, 'Francuski prozor', 3, 'Kratakak op[is', 'Detaljan opis necega', 'available', 0, '2020-09-01 16:46:35');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `article_feature` (
@@ -58,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `article_feature` (
   KEY `fk_article_feature_feature_id` (`feature_id`),
   CONSTRAINT `fk_article_feature_article_id` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_article_feature_feature_id` FOREIGN KEY (`feature_id`) REFERENCES `feature` (`feature_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DELETE FROM `article_feature`;
 /*!40000 ALTER TABLE `article_feature` DISABLE KEYS */;
@@ -66,7 +67,10 @@ INSERT INTO `article_feature` (`article_feature_id`, `article_id`, `feature_id`,
 	(1, 1, 1, 'jedno krilni'),
 	(2, 1, 2, 'dvokrilni'),
 	(11, 2, 1, 'alu'),
-	(12, 2, 3, 'vrata');
+	(12, 2, 3, 'vrata'),
+	(14, 4, 8, 'Promo'),
+	(15, 4, 1, '16"'),
+	(16, 4, 9, 'primer');
 /*!40000 ALTER TABLE `article_feature` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `article_price` (
@@ -77,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `article_price` (
   PRIMARY KEY (`article_price_id`),
   KEY `fk_article_price_article_id` (`article_id`),
   CONSTRAINT `fk_article_price_article_id` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DELETE FROM `article_price`;
 /*!40000 ALTER TABLE `article_price` DISABLE KEYS */;
@@ -86,7 +90,8 @@ INSERT INTO `article_price` (`article_price_id`, `article_id`, `price`, `created
 	(2, 1, 43.00, '2020-08-28 18:05:01'),
 	(3, 2, 56.00, '2020-08-28 21:10:51'),
 	(4, 3, 56.00, '2020-08-28 21:10:56'),
-	(5, 2, 59.12, '2020-08-30 19:44:07');
+	(5, 2, 59.12, '2020-08-30 19:44:07'),
+	(6, 4, 200.00, '2020-09-01 16:48:18');
 /*!40000 ALTER TABLE `article_price` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `cart` (
@@ -96,12 +101,14 @@ CREATE TABLE IF NOT EXISTS `cart` (
   PRIMARY KEY (`cart_id`),
   KEY `fk_cart_user_id` (`user_id`),
   CONSTRAINT `fk_cart_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DELETE FROM `cart`;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
 INSERT INTO `cart` (`cart_id`, `user_id`, `created_at`) VALUES
-	(1, 1, '2020-08-31 19:48:56');
+	(1, 1, '2020-08-31 19:48:56'),
+	(2, 1, '2020-09-01 12:41:26'),
+	(3, 1, '2020-09-01 19:45:14');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `cart_article` (
@@ -114,13 +121,15 @@ CREATE TABLE IF NOT EXISTS `cart_article` (
   KEY `fk_cart_article_article_id` (`article_id`),
   CONSTRAINT `fk_cart_article_article_id` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_cart_article_cart_id` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DELETE FROM `cart_article`;
 /*!40000 ALTER TABLE `cart_article` DISABLE KEYS */;
 INSERT INTO `cart_article` (`cart_article_id`, `cart_id`, `article_id`, `quantity`) VALUES
 	(1, 1, 1, 7.00),
-	(2, 1, 2, 0.00);
+	(2, 1, 2, 0.00),
+	(3, 2, 2, 2.00),
+	(4, 3, 1, 2.00);
 /*!40000 ALTER TABLE `cart_article` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `category` (
@@ -133,16 +142,17 @@ CREATE TABLE IF NOT EXISTS `category` (
   UNIQUE KEY `uq_category_image_path` (`image_path`),
   KEY `fk_category_parent_category_id` (`parent_category_id`),
   CONSTRAINT `fk_category_parent_category_id` FOREIGN KEY (`parent_category_id`) REFERENCES `category` (`category_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DELETE FROM `category`;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`category_id`, `name`, `image_path`, `parent_category_id`) VALUES
 	(1, 'Prozori', 'assets/prozor.jpg', NULL),
 	(2, 'Vrata', 'assets/vrata.jpg', NULL),
-	(3, 'PVC Jednokrilni prozori', 'assets/prozor/jendokrilini.jpg', 1),
+	(3, 'Promo linija', 'assets/prozor/jendokrilini.jpg', 1),
 	(4, 'PVC dvokrilni prozori', 'assets/prozor/dvokrilni.jpg', 1),
-	(5, 'Elitna linija', 'assets/prozor/elitni/elipro.jpg', 4);
+	(5, 'Elitna linija', 'assets/prozor/elitni/elipro.jpg', 4),
+	(6, 'Basic Linija', 'assets/basic.jpg', NULL);
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `feature` (
@@ -153,17 +163,18 @@ CREATE TABLE IF NOT EXISTS `feature` (
   UNIQUE KEY `uq_feature_name_category_id` (`name`,`category_id`),
   KEY `fk_feature_category_id` (`category_id`),
   CONSTRAINT `fk_feature_category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DELETE FROM `feature`;
 /*!40000 ALTER TABLE `feature` DISABLE KEYS */;
 INSERT INTO `feature` (`feature_id`, `name`, `category_id`) VALUES
-	(1, 'ALU', 5),
-	(8, 'ALU Prozor', 2),
+	(8, 'ALU ', 3),
+	(11, 'Dvoslojni', 3),
+	(3, 'Dvoslojni', 5),
+	(1, 'Jednoslojni', 3),
 	(9, 'primer', 2),
 	(10, 'primer2', 2),
-	(2, 'PVC', 5),
-	(3, 'Vrata', 5);
+	(2, 'PVC', 5);
 /*!40000 ALTER TABLE `feature` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `order` (
@@ -174,10 +185,14 @@ CREATE TABLE IF NOT EXISTS `order` (
   PRIMARY KEY (`order_id`),
   UNIQUE KEY `uq_order_cart_id` (`cart_id`),
   CONSTRAINT `fk_order_cart_id` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DELETE FROM `order`;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
+INSERT INTO `order` (`order_id`, `created_at`, `cart_id`, `status`) VALUES
+	(1, '2020-09-01 12:38:42', 1, 'pending'),
+	(2, '2020-09-01 12:42:06', 2, 'pending'),
+	(3, '2020-09-01 20:35:00', 3, 'pending');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `photo` (
@@ -208,13 +223,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `uq_user_email` (`email`),
   UNIQUE KEY `uq_user_phone_number` (`phone_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `email`, `password_hash`, `forename`, `surname`, `phone_number`, `postal_address`) VALUES
 	(1, 'test@test.rs', '3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2', 'Luka', 'Lukic', '+222222222', 'Neka adresa bb, Neki grad, Negde'),
-	(3, 'test2@test.rs', '3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2', 'Luka2', 'Lukic2', '+232222222', 'Neka adresa bb 2, Neki grad, Negde');
+	(3, 'test2@test.rs', '3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2', 'Luka2', 'Lukic2', '+232222222', 'Neka adresa bb 2, Neki grad, Negde'),
+	(4, 'test322@test.rs', '071F4B5D4582D1BF221AF1754E1D515A7CB1D47BE66512CFEDB781D9E978DA49BBF21088952C20D3C88AEFF03FD0E5411C2B32D4BE132EE06E0B64C8A7232D4F', 'Lukans', 'Lukiins', '+381113000000', 'Neka adresa bb 23, Neki grad, Negde');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
