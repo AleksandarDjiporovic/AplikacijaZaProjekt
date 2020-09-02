@@ -251,7 +251,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"test2\",\r\n    \"password\": \"test2\"\r\n}"
+							"raw": "{\r\n    \"username\": \"admin123\",\r\n    \"password\": \"admin123\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/administrator/",
@@ -1473,7 +1473,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}"
+							"raw": "{\r\n    \"username\": \"admin123\",\r\n    \"password\": \"admin123\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/auth/administrator/login/",
@@ -1553,7 +1553,69 @@
 							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3001,\n    \"message\": null\n}"
 						},
 						{
-							"name": "Login- when admin exists and pass is correct",
+							"name": "Administrator Login - new",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin123\",\r\n    \"password\": \"admin123\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/administrator/login/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"administrator",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "297"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"129-JHdzsRaH0EXR1j0KxOgF0LYAriA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Sep 2020 11:49:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9,\n    \"identity\": \"admin123\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW5pc3RyYXRvciIsImlkIjo5LCJpZGVudGl0eSI6ImFkbWluMTIzIiwiZXhwIjoxNjAwMjU2OTc5LjE1NCwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5OTA0NzM3OX0.egGzJav5mqF-XXRJPLfPVLSgI8NgKDK4ToIk93BH3RA\"\n}"
+						},
+						{
+							"name": "Login- when admin exists and pass is correct - old",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -2588,7 +2650,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"articleId\": 2,\r\n    \"quantity\" : 2\r\n}",
+							"raw": "{\r\n    \"articleId\": 1,\r\n    \"quantity\" : 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2925,6 +2987,368 @@
 					"listen": "test",
 					"script": {
 						"id": "cf8fd16b-723f-4357-8cdc-9fdf54ad2d55",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get order information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/order/3/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"3",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get order information",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/order/3/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"order",
+										"3",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1037"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40d-y2kV8YXyeTcptiLWzHP/eCWZfSQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Sep 2020 11:52:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderId\": 3,\n    \"createdAt\": \"2020-09-01T18:35:00.000Z\",\n    \"cartId\": 3,\n    \"status\": \"pending\",\n    \"cart\": {\n        \"cartId\": 3,\n        \"userId\": 1,\n        \"createdAt\": \"2020-09-01T17:45:14.000Z\",\n        \"user\": {\n            \"userId\": 1,\n            \"email\": \"test@test.rs\",\n            \"passwordHash\": \"3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2\",\n            \"forename\": \"Luka\",\n            \"surname\": \"Lukic\",\n            \"phoneNumber\": \"+222222222\",\n            \"postalAddress\": \"Neka adresa bb, Neki grad, Negde\"\n        },\n        \"cartArticles\": [\n            {\n                \"cartArticleId\": 4,\n                \"cartId\": 3,\n                \"articleId\": 1,\n                \"quantity\": \"2.00\",\n                \"article\": {\n                    \"articleId\": 1,\n                    \"name\": \"Prozor\",\n                    \"categoryId\": 5,\n                    \"excerpt\": \"Kratak opis\",\n                    \"description\": \"Detaljan opis\",\n                    \"status\": \"available\",\n                    \"isPromoted\": 0,\n                    \"createdAt\": \"2020-08-28T15:41:14.000Z\",\n                    \"category\": {\n                        \"categoryId\": 5,\n                        \"name\": \"Elitna linija\",\n                        \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n                        \"parentCategoryId\": 4\n                    },\n                    \"articlePrices\": [\n                        {\n                            \"articlePriceId\": 1,\n                            \"articleId\": 1,\n                            \"price\": \"45.00\",\n                            \"createdAt\": \"2020-08-28T16:04:42.000Z\"\n                        },\n                        {\n                            \"articlePriceId\": 2,\n                            \"articleId\": 1,\n                            \"price\": \"43.00\",\n                            \"createdAt\": \"2020-08-28T16:05:01.000Z\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get order information - error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/order/57/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"order",
+										"57",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-zQreLLvU6NgF50ayOzJLv2meF5c\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Sep 2020 11:53:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -9001,\n    \"message\": \"No such order found!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change order status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newStatus\": \"rejected\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/order/3/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"3",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Change order status",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"newStatus\": \"rejected\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/order/3/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"order",
+										"3",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1038"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40e-GjOF/MrNzmnu3VM7EQo1n2Hwhg4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Sep 2020 11:56:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderId\": 3,\n    \"createdAt\": \"2020-09-01T18:35:00.000Z\",\n    \"cartId\": 3,\n    \"status\": \"rejected\",\n    \"cart\": {\n        \"cartId\": 3,\n        \"userId\": 1,\n        \"createdAt\": \"2020-09-01T17:45:14.000Z\",\n        \"user\": {\n            \"userId\": 1,\n            \"email\": \"test@test.rs\",\n            \"passwordHash\": \"3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2\",\n            \"forename\": \"Luka\",\n            \"surname\": \"Lukic\",\n            \"phoneNumber\": \"+222222222\",\n            \"postalAddress\": \"Neka adresa bb, Neki grad, Negde\"\n        },\n        \"cartArticles\": [\n            {\n                \"cartArticleId\": 4,\n                \"cartId\": 3,\n                \"articleId\": 1,\n                \"quantity\": \"2.00\",\n                \"article\": {\n                    \"articleId\": 1,\n                    \"name\": \"Prozor\",\n                    \"categoryId\": 5,\n                    \"excerpt\": \"Kratak opis\",\n                    \"description\": \"Detaljan opis\",\n                    \"status\": \"available\",\n                    \"isPromoted\": 0,\n                    \"createdAt\": \"2020-08-28T15:41:14.000Z\",\n                    \"category\": {\n                        \"categoryId\": 5,\n                        \"name\": \"Elitna linija\",\n                        \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n                        \"parentCategoryId\": 4\n                    },\n                    \"articlePrices\": [\n                        {\n                            \"articlePriceId\": 1,\n                            \"articleId\": 1,\n                            \"price\": \"45.00\",\n                            \"createdAt\": \"2020-08-28T16:04:42.000Z\"\n                        },\n                        {\n                            \"articlePriceId\": 2,\n                            \"articleId\": 1,\n                            \"price\": \"43.00\",\n                            \"createdAt\": \"2020-08-28T16:05:01.000Z\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get order information - error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/order/57/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"order",
+										"57",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-zQreLLvU6NgF50ayOzJLv2meF5c\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Sep 2020 11:53:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -9001,\n    \"message\": \"No such order found!\"\n}"
+						},
+						{
+							"name": "Get order information",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/order/3/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"order",
+										"3",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1037"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40d-y2kV8YXyeTcptiLWzHP/eCWZfSQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Sep 2020 11:52:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderId\": 3,\n    \"createdAt\": \"2020-09-01T18:35:00.000Z\",\n    \"cartId\": 3,\n    \"status\": \"pending\",\n    \"cart\": {\n        \"cartId\": 3,\n        \"userId\": 1,\n        \"createdAt\": \"2020-09-01T17:45:14.000Z\",\n        \"user\": {\n            \"userId\": 1,\n            \"email\": \"test@test.rs\",\n            \"passwordHash\": \"3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2\",\n            \"forename\": \"Luka\",\n            \"surname\": \"Lukic\",\n            \"phoneNumber\": \"+222222222\",\n            \"postalAddress\": \"Neka adresa bb, Neki grad, Negde\"\n        },\n        \"cartArticles\": [\n            {\n                \"cartArticleId\": 4,\n                \"cartId\": 3,\n                \"articleId\": 1,\n                \"quantity\": \"2.00\",\n                \"article\": {\n                    \"articleId\": 1,\n                    \"name\": \"Prozor\",\n                    \"categoryId\": 5,\n                    \"excerpt\": \"Kratak opis\",\n                    \"description\": \"Detaljan opis\",\n                    \"status\": \"available\",\n                    \"isPromoted\": 0,\n                    \"createdAt\": \"2020-08-28T15:41:14.000Z\",\n                    \"category\": {\n                        \"categoryId\": 5,\n                        \"name\": \"Elitna linija\",\n                        \"imagePath\": \"assets/prozor/elitni/elipro.jpg\",\n                        \"parentCategoryId\": 4\n                    },\n                    \"articlePrices\": [\n                        {\n                            \"articlePriceId\": 1,\n                            \"articleId\": 1,\n                            \"price\": \"45.00\",\n                            \"createdAt\": \"2020-08-28T16:04:42.000Z\"\n                        },\n                        {\n                            \"articlePriceId\": 2,\n                            \"articleId\": 1,\n                            \"price\": \"43.00\",\n                            \"createdAt\": \"2020-08-28T16:05:01.000Z\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW5pc3RyYXRvciIsImlkIjo5LCJpZGVudGl0eSI6ImFkbWluMTIzIiwiZXhwIjoxNjAwMjU2OTc5LjE1NCwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5OTA0NzM3OX0.egGzJav5mqF-XXRJPLfPVLSgI8NgKDK4ToIk93BH3RA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "24488fd9-e814-4a4e-b246-caa5ef538184",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c68064b-ffb9-4569-9e38-bf3bdc4c7f46",
 						"type": "text/javascript",
 						"exec": [
 							""
